@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "marginofaaron.github.io"
+  title: "Aaron Olson"
   navbar:
     left:
       - href: index.qmd
