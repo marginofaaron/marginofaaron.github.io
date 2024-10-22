@@ -1,11 +1,22 @@
 ---
-title: "marginofaaron.github.io"
+title: "Aaron Olson"
+about:
+  template: jolla
+  image: profile.png
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/marginofaaron
+    - icon: github
+      text: Github
+      href: https://github.com/marginofaaron
+    - icon: envelope-at
+      text: Email
+      href: mailto:aaroneolson@protonmail.com
 ---
 
-This is a Quarto website.
+I’m Aaron Olson, a data analyst based in Indianapolis, Indiana. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+I primarily use this site to blog about data analysis. My data interests include geography, demographics, population statistics, and sports. This site was built with [Quarto](https://quarto.org/) and the [R Statistical Programming Language](https://www.r-project.org/). R is my coding language of choice for statistical analysis and visualization, but I also use [Python](https://www.python.org/) and [SQL](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) when the need arises.
 
-```{r}
-1 + 1
-```
+*Disclaimer: Everything on this site comes from my own mind and is not associated with any employer or organization that I am currently or previously attached to  :)*

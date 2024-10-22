@@ -1,0 +1,17 @@
+---
+title: "Hello, World"
+description: "Welcome to my blog"
+author:
+  - name: Aaron Olson
+    url: https://github.com/marginofaaron
+date: 10-21-2024
+categories: [Quarto, R] # self-defined categories
+image: icomeinpeace.jpg
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+Hey there!
+
+Welcome to my blog. Special thanks to [Samantha Csik's wonderful guide](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/) on setting up a blog on a Quarto website.
+
+Don't worry, [I come in peace](https://www.youtube.com/watch?v=atUUjSLMSiM).

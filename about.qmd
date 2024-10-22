@@ -1,9 +1,0 @@
----
-title: "About"
----
-
-hello. this is my website.
-
-```{r}
-1 + 1
-```

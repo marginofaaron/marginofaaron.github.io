@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "marginofaaron.github.io",
+    "title": "Aaron Olson",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I’m Aaron Olson, a data analyst based in Indianapolis, Indiana.\nI primarily use this site to blog about data analysis. My data interests include geography, demographics, population statistics, and sports. This site was built with Quarto and the R Statistical Programming Language. R is my coding language of choice for statistical analysis and visualization, but I also use Python and SQL when the need arises.\nDisclaimer: Everything on this site comes from my own mind and is not associated with any employer or organization that I am currently or previously attached to :)"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,40 @@
     "title": "About",
     "section": "",
     "text": "hello. this is my website.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#first-section",
+    "href": "index.html#first-section",
+    "title": "marginofaaron.github.io",
+    "section": "",
+    "text": "Here is some more content"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Aaron Olson",
+    "section": "Education",
+    "text": "Education\nUniversity of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul MA B.A in Economics | Sept 2007 - June 2011"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Aaron Olson",
+    "section": "Experience",
+    "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Spet 2012 - April 2018"
+  },
+  {
+    "objectID": "blogposts.html",
+    "href": "blogposts.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Hello, World\n\n\n\nQuarto\n\n\nR\n\n\n\nWelcome to my blog\n\n\n\nAaron Olson\n\n\nOct 21, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2024-10-21-hello-world/index.html",
+    "href": "posts/2024-10-21-hello-world/index.html",
+    "title": "Hello, World",
+    "section": "",
+    "text": "Hey there!\nWelcome to my blog. Special thanks to Samantha Csik’s wonderful guide on setting up a blog on a Quarto website.\nDon’t worry, I come in peace."
   }
 ]
