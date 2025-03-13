@@ -1,0 +1,21 @@
+{
+  "hash": "250121deb9e076acce9916a28e05c3b6",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Hello, World\"\ndescription: \"Welcome to my blog\"\nauthor:\n  - name: Aaron Olson\n    url: https://github.com/marginofaaron\ndate: 10-21-2024\ncategories: [Quarto, R] # self-defined categories\nimage: icomeinpeace.jpg\ndraft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!\nformat:\n  html:\n    code-fold: true\n    code-tools: true\n    code-copy: true\nexecute:\n  warning: false\n  message: false\n---\n\n\n\n\n\nHey there! 👋\n\nWelcome to my blog. Special thanks to [Samantha Csik's wonderful guide](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/) on setting up a blog on a Quarto website.\n\nDon't worry, [I come in peace](https://www.youtube.com/watch?v=atUUjSLMSiM).\n\n</br>\n\n## 🔎 Viewing source code on this site\n\nData analyses in the blog posts on this site are usually conducted with the R coding language. To view the code that generates the analysis, click the **\"\\> Code\"** dropdown button above each chunk.\n\nThere is also a button on the top right corner of every post with code-folding enabled to globally expand or collapse all code chunks.\n\n### Code Chunk Example\n\nFor example, the code that loads the [iris](https://www.statology.org/iris-dataset-r/) dataset and generates the plot below can be expanded or collapsed by the **\"\\> Code\"** dropdown button.\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nboxplot(Sepal.Length~Species,\n        data=iris,\n        main='Sepal Length by Species',\n        xlab='Species',\n        ylab='Sepal Length',\n        col='steelblue',\n        border='black')\n```\n\n::: {.cell-output-display}\n![A boxplot of the iris dataset](index_files/figure-html/iris-example-1.png){width=672}\n:::\n:::\n\n\n\n\n\nIt's a [useful feature](https://quarto.org/docs/output-formats/html-code.html) of Quarto that allows for documents to be consumed easily by both technical and non-technical readers.\n\nHappy reading 😁\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\n<script src=\"../../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

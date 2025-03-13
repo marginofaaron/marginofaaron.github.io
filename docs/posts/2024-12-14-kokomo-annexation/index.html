@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,12 +73,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-79fe061c33258ab7f76d404bb2494a69.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-683531b1bb65717939ca4a52ec092969.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,19 +107,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
-
 
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Annexation Station – Aaron Olson">
 <meta property="og:description" content="Lookout for boundary changes when population totals jump">
-<meta property="og:image" content="fig-kokomo-city-limits-2010-2020-1.png">
+<meta property="og:image" content="fig-kokomo-2010-2020-1.png">
 <meta property="og:site_name" content="Aaron Olson">
 <meta name="twitter:title" content="Annexation Station – Aaron Olson">
 <meta name="twitter:description" content="Lookout for boundary changes when population totals jump">
-<meta name="twitter:image" content="fig-kokomo-city-limits-2010-2020-1.png">
+<meta name="twitter:image" content="fig-kokomo-2010-2020-1.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -553,8 +551,8 @@ Figure&nbsp;4: Kokomo’s city limits each year, 2010-2020
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>So, what’s the solution? There are more advanced techniques that attempt to hold the geographic boundaries steady over time, but that’s outside the scope of this post. A good alternative is to use either counties or county subdivisions (townships) to approximate the same area over time.</p>
-<p>Center Township in Howard County contains most of Kokomo. Here is the population over time for Center Township. Notice how stable it is.</p>
+<p>So, what’s the solution? There are more advanced techniques that attempt to hold the geographic boundaries steady over time, but that’s outside the scope of this post. Additionally, you could lean on the Census Bureau’s <a href="https://www.census.gov/programs-surveys/popest.html">population estimates program</a> for more granular population change data.</p>
+<p>A good alternative is to use either counties or county subdivisions (townships) to approximate the same area over time. Center Township in Howard County contains most of Kokomo. Here is the population over time for Center Township. Notice how stable it is.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Get population of Center Township, Howard County, Indiana</summary>
@@ -839,8 +837,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1002,7 +998,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1538,9 +1533,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb10-322"><a href="#cb10-322" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-323"><a href="#cb10-323" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
 <span id="cb10-324"><a href="#cb10-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-325"><a href="#cb10-325" aria-hidden="true" tabindex="-1"></a>So, what's the solution? There are more advanced techniques that attempt to hold the geographic boundaries steady over time, but that's outside the scope of this post. A good alternative is to use either counties or county subdivisions (townships) to approximate the same area over time.</span>
+<span id="cb10-325"><a href="#cb10-325" aria-hidden="true" tabindex="-1"></a>So, what's the solution? There are more advanced techniques that attempt to hold the geographic boundaries steady over time, but that's outside the scope of this post. Additionally, you could lean on the Census Bureau's <span class="co">[</span><span class="ot">population estimates program</span><span class="co">](https://www.census.gov/programs-surveys/popest.html)</span> for more granular population change data.</span>
 <span id="cb10-326"><a href="#cb10-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-327"><a href="#cb10-327" aria-hidden="true" tabindex="-1"></a>Center Township in Howard County contains most of Kokomo. Here is the population over time for Center Township. Notice how stable it is.</span>
+<span id="cb10-327"><a href="#cb10-327" aria-hidden="true" tabindex="-1"></a>A good alternative is to use either counties or county subdivisions (townships) to approximate the same area over time. Center Township in Howard County contains most of Kokomo. Here is the population over time for Center Township. Notice how stable it is.</span>
 <span id="cb10-328"><a href="#cb10-328" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-331"><a href="#cb10-331" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb10-332"><a href="#cb10-332" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Get population of Center Township, Howard County, Indiana"</span></span>
