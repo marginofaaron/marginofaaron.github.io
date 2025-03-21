@@ -17,13 +17,14 @@ execute:
   warning: false
   message: false
 ---
+
 ## Introduction
 
 Analyzing population growth over time is a common task in demographic analysis. It can be more complex than it seems, particularly at municipal level where city borders can change quite frequently.
 
 Fortunately, R has a series of packages that can help navigate these challenges. This post details how I approach boundary changes in population analysis, using [`tidycensus`](https://walker-data.com/tidycensus/index.html), [`sf`](https://r-spatial.github.io/sf/) and [`tigris`](https://github.com/walkerke/tigris) analyzing Kokomo, Indiana as an example.
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
 The analysis in this post uses the `tidycensus` R package heavily. To learn more about how to set up and use that package, check out my blog post on it [here](https://aaroneolson.me/posts/2024-11-22-tidycensus-guide/). To view the code behind the analysis, click the dropdowns throughout the post.
 :::
 
@@ -106,7 +107,7 @@ ggplot(kokomo_pop_data, aes(x = year, y = value)) +
 
 The year-over-year change in population is shown in @fig-kokomo-2010-2020. No doubt about it, 2012 is an outlier. The population increased by over 8,000 people in one year, compared to less than 1,300 in every other observation in this data set.
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
 ACS population estimates (particular the 5-Year sample) like the ones below aren't the most precise population estimates put out by the Census Bureau, they work well enough to show general trends. The 1-Year sample is not available for Kokomo, as it only covers geographies with a population of 65,000 or greater.
 :::
 
@@ -157,11 +158,11 @@ ggplot(kokomo_by_year, aes(x = year, y = pop_change, group = 1)) +
 
 ## Investigating City Limit Changes
 
-Based on the data so far, it appears Kokomo's boundaries may have changed around 2012, resulting in annexation of new land and a population increase. To confirm this, I used the `tigris` package to map the city's boundaries over time. The map below shows Kokomo's city limits each year from 2014 through 2020 layered on top of one another. 
+Based on the data so far, it appears Kokomo's boundaries may have changed around 2012, resulting in annexation of new land and a population increase. To confirm this, I used the `tigris` package to map the city's boundaries over time. The map below shows Kokomo's city limits each year from 2014 through 2020 layered on top of one another.
 
 When I attempted to include years before 2014, the `tigris` package told me that the boundaries were not available for those years. I will address that by importing shapefiles downloaded from the Census website for those specific years later in the post.
 
-::: {.callout-note}
+::: {.callout-note collapse="true"}
 There are certainly more elegant ways to write the code below, but in the spirit of the ["Make it Work. Make it Right. Make it Fast."](https://medium.com/swlh/coding-faster-make-it-work-then-make-it-good-6aa988ebd8ab) mantra, this code sits firmly in the "Make it Work" bucket.
 :::
 
@@ -228,7 +229,6 @@ kokomo_lims + labs(title = "  Kokomo City Limits 2014-2020",
                    caption = 'Howard County Census tracts in grey ')
 ```
 
-
 The boundaries for 2014 are show in black, and the boundaries for years 2015-2020 are showing in red. You can clearly see that between 2014 and 2015, the city expanded to the east and south. However, this expansion doesn't appear to have pulled in a significant population addition.
 
 ## Bringing in Shapefiles for Earlier Years
@@ -266,7 +266,6 @@ kokomo_boundaries_2010 <- kokomo_boundaries_2010 %>%
   filter(str_detect(NAME10, "Kokomo"))
 
 ```
-
 
 ```{r}
 #| label: "fig-kokomo-city-limits-2010-2020"
@@ -354,7 +353,7 @@ ggplot(center_by_year, aes(x = year, y = estimate, group = 1)) +
   scale_x_discrete(breaks = seq(2010, 2023, 2))
 
 ```
+
 City boundaries change frequently. When looking at population change--or any metric that uses population as a denominator--it's import to keep the possibility of annexation in mind.
 
-The `tidycensus`, `sf`, and `tigris` packages are a powerful toolkit for ensuring the results of your analysis can be placed in the proper context. 
-
+The `tidycensus`, `sf`, and `tigris` packages are a powerful toolkit for ensuring the results of your analysis can be placed in the proper context.

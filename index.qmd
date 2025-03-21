@@ -17,6 +17,6 @@ about:
 
 I’m Aaron Olson, a data analyst based in Indianapolis, Indiana.
 
-I primarily use this site to blog about data analysis. My data interests include geography, demographics, population statistics, and sports. This site was built with [Quarto](https://quarto.org/) and the [R Statistical Programming Language](https://www.r-project.org/). R is my coding language of choice for statistical analysis and visualization, but I also use JavaScript and SQL when the need arises.
+I primarily use this site to blog about data analysis. My data interests include geography, demographics, population statistics, and sports. This site was built with [Quarto](https://quarto.org/) and the [R Statistical Programming Language](https://www.r-project.org/).
 
 *Disclaimer: Everything on this site comes from my own mind and is not associated with any employer or organization that I am currently or previously attached to :)*
