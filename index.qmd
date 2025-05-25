@@ -1,5 +1,7 @@
 ---
 title: "Aaron Olson"
+editor:
+  mode: source
 about:
   template: solana
   image: profile.png
@@ -15,8 +17,18 @@ about:
       href: mailto:aaroneolson@pm.me
 ---
 
-I’m Aaron Olson, a data analyst based in Indianapolis, Indiana.
+Hi, I’m Aaron 👋
 
-I primarily use this site to blog about data analysis. My data interests include geography, demographics, population statistics, and sports. This site was built with [Quarto](https://quarto.org/) and the [R Statistical Programming Language](https://www.r-project.org/).
+My background is in data visualization and analytics and this website is my attempt at writing some code. It was built with [Quarto](https://quarto.org/) and the [R Statistical Programming Language](https://www.r-project.org/).
 
-*Disclaimer: Everything on this site comes from my own mind and is not associated with any employer or organization that I am currently or previously attached to :)*
+I am self-taught with varying levels of proficiency in the following languages: R, SQL, HTML, CSS, and JavaScript. My areas of particular interest and expertise include U.S. Census data and population statistics. 
+
+Let's build something [together](mailto:aaroneolson@pm.me).
+
+</br> </br>
+
+```{=html}
+<div style="font-size: 10px; font-style: italic;">
+Disclaimer: Everything on this site comes from my own mind and is not associated with any employer or organization that I am currently or previously attached to 
+</div>
+```
