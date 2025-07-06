@@ -1,0 +1,42 @@
+/*-- scss:defaults --*/
+
+
+/*-- scss:rules --*/
+.about {
+  text-align: left;
+}
+
+@media (max-width: 991.98px) {
+  div.quarto-about-solana .about-entity .about-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  div.quarto-about-solana .about-entity .about-link {
+    font-size: 1em;
+    padding: 0.25em;
+    margin: 5px;
+  }
+}
+
+.customh3 {
+  opacity: 0.9;
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: calc(1.27rem + 0.24vw);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--bs-heading-color);
+  display: block;
+}
+
+.container img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}

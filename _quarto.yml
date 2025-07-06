@@ -9,6 +9,7 @@ website:
       - href: index.qmd
         text: Home
       - blogposts.qmd
+      - code.qmd
   page-footer: 
    background: dark
    left: © 2024 Aaron Olson
@@ -19,14 +20,15 @@ website:
       href: https://github.com/marginofaaron
     - icon: envelope-at
       href: mailto:aaroneolson@protonmail.com
-  favicon: favicon3.ico
+  favicon: bar-chart-emoji.ico
   twitter-card: true
   open-graph: true
    
 format:
   html:
-    theme: sandstone
-    css: styles.css
+    theme: 
+      - sandstone
+      - styles.scss
     toc: true
     df-print: paged
 

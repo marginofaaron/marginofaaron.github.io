@@ -17,6 +17,7 @@ about:
       href: mailto:aaroneolson@pm.me
 ---
 
+::: {.about}
 Hi, I’m Aaron 👋
 
 My background is in data visualization and analytics and this website is my attempt at writing some code. It was built with [Quarto](https://quarto.org/) and the [R Statistical Programming Language](https://www.r-project.org/).
@@ -24,6 +25,7 @@ My background is in data visualization and analytics and this website is my atte
 I am self-taught with varying levels of proficiency in the following languages: R, SQL, HTML, CSS, and JavaScript. My areas of particular interest and expertise include U.S. Census data and population statistics. 
 
 Let's build something [together](mailto:aaroneolson@pm.me).
+:::
 
 </br> </br>
 

@@ -4,7 +4,7 @@ description: "Welcome to my blog"
 author:
   - name: Aaron Olson
     url: https://github.com/marginofaaron
-date: 10-21-2024
+date: 08-01-2024
 categories: [Quarto, R] # self-defined categories
 image: icomeinpeace.jpg
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
