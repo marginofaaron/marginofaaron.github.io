@@ -23,6 +23,7 @@ website:
   favicon: bar-chart-emoji.ico
   twitter-card: true
   open-graph: true
+  site-url: https://aaroneolson.me
    
 format:
   html:
