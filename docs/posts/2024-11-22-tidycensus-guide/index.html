@@ -68,7 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../favicon3.ico" rel="icon">
+<link href="../../bar-chart-emoji.ico" rel="icon">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-496d0df8ff017e2b8ca09cb3505ae387.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7c83eb6d341a470b5e6d66f68b0bda7c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -128,14 +128,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
-<link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="My personal tidycensus guide – Aaron Olson">
 <meta property="og:description" content="Analyze Census data ten times faster">
-<meta property="og:image" content="county_income.png">
+<meta property="og:image" content="https://aaroneolson.me/posts/2024-11-22-tidycensus-guide/county_income.png">
 <meta property="og:site_name" content="Aaron Olson">
+<meta property="og:image:height" content="670">
+<meta property="og:image:width" content="769">
 <meta name="twitter:title" content="My personal tidycensus guide – Aaron Olson">
 <meta name="twitter:description" content="Analyze Census data ten times faster">
-<meta name="twitter:image" content="county_income.png">
+<meta name="twitter:image" content="https://aaroneolson.me/posts/2024-11-22-tidycensus-guide/county_income.png">
+<meta name="twitter:creator" content="@marginofaaron">
+<meta name="twitter:image-height" content="670">
+<meta name="twitter:image-width" content="769">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -163,6 +167,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="../../blogposts.html"> 
 <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../code.html"> 
+<span class="menu-text">Code</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -648,7 +656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/aaroneolson\.me");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

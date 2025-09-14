@@ -17,15 +17,21 @@ about:
       href: mailto:aaroneolson@pm.me
 ---
 
-::: {.about}
+::: about
 Hi, I’m Aaron 👋
 
-My background is in data visualization and analytics and this website is my attempt at writing some code. It was built with [Quarto](https://quarto.org/) and the [R Statistical Programming Language](https://www.r-project.org/).
+I am an aspiring Data Visualization Developer with a background in the [R Statistical Programming Language](https://www.r-project.org/). This site is where I post my various data projects and document my experiences learning to code.
 
-I am self-taught with varying levels of proficiency in the following languages: R, SQL, HTML, CSS, and JavaScript. My areas of particular interest and expertise include U.S. Census data and population statistics. 
+My areas of subject-matter expertise include U.S. Census data and population statistics. I am also an avid sports data enthusiast.
 
-Let's build something [together](mailto:aaroneolson@pm.me).
+Send me an email if you want to [collaborate](mailto:aaroneolson\@pm.me) or subscribe to receive updates on my email list.
 :::
+
+</br> </br>
+
+```{=html}
+<iframe src="https://marginofaaron.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+```
 
 </br> </br>
 
