@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Aaron Olson"
+  image: "websitePreview.jpeg"
   navbar:
     left:
       - href: index.qmd
@@ -21,9 +22,11 @@ website:
     - icon: envelope-at
       href: mailto:aaroneolson@protonmail.com
   favicon: bar-chart-emoji.ico
-  twitter-card: true
+  twitter-card:
+    creator: "@marginofaaron"
   open-graph: true
   site-url: https://aaroneolson.me
+  
    
 format:
   html:
