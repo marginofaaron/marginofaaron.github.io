@@ -24,14 +24,8 @@ I am an aspiring Data Visualization Developer with a background in the [R Statis
 
 My areas of subject-matter expertise include U.S. Census data and population statistics. I am also an avid sports data enthusiast.
 
-Send me an email if you want to [collaborate](mailto:aaroneolson\@pm.me) or subscribe to receive updates on my email list.
+Send me an email if you want to [collaborate](mailto:aaroneolson\@pm.me) or subscribe to receive updates on [my email list](https://marginofaaron.substack.com/).
 :::
-
-</br> </br>
-
-```{=html}
-<iframe src="https://marginofaaron.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-```
 
 </br> </br>
 
