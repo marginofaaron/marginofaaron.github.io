@@ -20,7 +20,7 @@ about:
 ::: about
 Hi, I’m Aaron 👋
 
-I am an aspiring Data Visualization Developer with a background in the [R Statistical Programming Language](https://www.r-project.org/). This site is where I post my various data projects and document my experiences learning to code.
+I am a data analyst with a background in the [R Statistical Programming Language](https://www.r-project.org/). This site is where I post my various data projects and document my experiences learning to code.
 
 My areas of subject-matter expertise include U.S. Census data and population statistics. I am also an avid sports data enthusiast.
 
