@@ -1,0 +1,426 @@
+---
+title: "Update: Clark's 2024 season still stands out"
+description: "Re-visiting her rookie campaign's offensive production"
+author:
+  - name: Aaron Olson
+    url: https://github.com/marginofaaron
+date: 09-24-2025
+categories: [R, sports, Observable] 
+image: clark2024-2.png
+draft: false 
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    code-copy: true
+execute:
+  warning: false
+  message: false
+---
+
+## Introduction
+
+[Last year](https://aaroneolson.me/posts/2024-09-29-caitlin-clark-2024/), I wrote that Caitlin Clark's offensive contributions in her 2024 rookie season for the Indiana Fever was unmatched among both WNBA and NBA players since at least 2019. She was the only player in either league over this time span to contribute 40% of a team's assists and 20% of a team's points in a single season.
+
+With the WNBA playoffs in full swing, and the Clark-less Fever making an inspired run, I am re-visiting that analysis.
+
+This time, I have expanded the time frame to include that last 10 seasons of WNBA and NBA play as well as the WNBA regular season that just concluded. Data was pulled using the [`wehoop`](https://wehoop.sportsdataverse.org) and [`hoopR`](https://hoopr.sportsdataverse.org) R packages from the Sports Dataverse. 
+
+Also new this time is the interactive scatterplot below, created with the Observable Plot JavaScript library. There is a [companion notebook on the Observable HQ platform](https://observablehq.com/d/04c59e1389f39e95), for those interested in creating something similar.
+
+## Interactive Plot
+
+```{ojs}
+//| output: false
+//| echo: false
+
+// transpose for usage with ojs
+dataOJS = transpose(data)
+
+```
+
+```{ojs}
+//| output: false
+//| echo: false
+
+// filter data based on radio button
+filteredData = () => {
+  if (radios === "All") {
+    return dataOJS;
+} else {
+    return dataOJS.filter(d => d.League === radios)
+}
+}
+
+```
+
+```{ojs}
+//| echo: false
+
+Plot.plot({
+  title: html`<p style = "margin-bottom: ${defaults.titleMarginBottom};  
+                            font-size:  ${defaults.titleFontSize};
+                            font-weight:  ${defaults.titleFontWeight};
+                            font-color: ${defaults.titleFontColor};">Who contributed the most to their team's offensive output?</p>`,
+  subtitle: html`<p style = "margin-bottom: ${defaults.subTitleMarginBottom}; 
+                            font-size:  ${defaults.subTitleFontSize};
+                            margin-top: ${defaults.subtTitleMarginTop};
+                            font-color: ${defaults.subTitleFontColor};">Point and Assist Shares by Player: WNBA & NBA (2015-2025)</p>`,
+  inset: 8,
+  grid: true,
+  marginBottom: 70,
+
+  color: {
+    domain: ["NBA", "WNBA"],
+    range: ["#003f66", "#FFB915"],
+    legend: true
+  },
+  
+  x: {label: "Share of Team Points (%)",
+    tickFormat: d3.format(".0%"),
+     labelOffset: defaults.labelOffsetRegular},
+  y: {label: "Share of Team Assists (%)",
+    tickFormat: d3.format(".0%")},
+  caption: "Data Sources: `wehoop` & `hoopR` R packages",
+  marks: [
+    Plot.dot(filteredData(), {x: "points_share", 
+                                 y: "assist_share", 
+                                 stroke: "League", 
+                                 channels: {
+                                  points: {
+                                    value: "points_share",
+                                    label: "Points Share"},
+                                  assists: {
+                                    value: "assist_share",
+                                    label: "Assists Share"
+                                  },
+                                  player: {
+                                    value: "athlete_display_name",
+                                    label: "Player"
+                                  },
+                                  team: {
+                                    value: "team_display_name",
+                                    label: "Team"
+                                  },
+                                   league: {
+                                     value: "League",
+                                     label: "League"},
+                                   season: {
+                                     value: "season",
+                                     label: "Season"
+                                   }
+                                  } ,
+                                  tip: {
+                                    format: {
+                                      player: true,
+                                      team: true,
+                                      points: (d) => d3.format(".0%")(d),
+                                      assists: (d) => d3.format(".0%")(d),
+                                      league: true,
+                                      season: (d) => d3.format(".0f")(d),
+                                      stroke: false,
+                                      y: false,
+                                      x: false
+                                  }
+                        }}),
+    Plot.ruleY([0.4],{strokeOpacity: 0.4}),
+    Plot.ruleX([0.2],{strokeOpacity: 0.4})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+
+viewof radios = Inputs.radio(["WNBA", "NBA", "All"], 
+                             {label: "Select League", 
+                              value: "All"})
+```
+
+## Conculsion(s)
+
+The only players to achieve 40-20 seasons since 2015 are (2017 was wild!):
+
+- Russell Westbrook (2017): 49% assist share | 29% points share
+- Russell Westbrook (2018): 47% assist share | 23% points share
+- James Harden (2017): 44% assist share | 25% points share
+- Russell Westbrook (2016): 44% assist share | 21% points share
+- Caitlin Clark (2024): 41% assist share | 23% points share
+- John Wall (2017): 42% assist share | 42% points share
+
+Clark is the only rookie and only WNBA player on this list. All of these players' associated teams made the playoffs, but none won the title. It would be interesting to see if a single player dominating a team's offensive output has a positive or negative affect on their success--maybe a topic for a future post?
+
+Still, it's a fun stat and a truly remarkable feat for a rookie season. As a Fever fan, let's hope she can get back on the court next season and keep breaking records.
+
+## Analysis Code
+
+My code is below for those interested in how to create something like this. Typically, I would just pull all required years of data in one API call. However, I realized mid-way through this project that the 2018 NBA team assist values were wrong (chronically low).
+
+So, I pulled 2015:2017 and 2019:2025 from the `load_nba_team_box` function and then the 2018 NBA team values from the `espn_nba_team_stats` which seemed to be correct. I opened a [GitHub issue for this](https://github.com/sportsdataverse/hoopR/issues/164) and may take a look at attempting to fix it so others don't run into the same problem.
+
+### WNBA Data
+
+```{r}
+#| output: false
+
+# Load Packages
+library(tidyverse)
+library(wehoop)
+library(hoopR)
+library(ggplot2)
+library(plotly)
+library(hrbrthemes)
+library(scales)
+
+```
+
+```{r}
+#| output: false
+
+# All WNBA Seasons Data
+
+hist_wnba_player_box <- wehoop::load_wnba_player_box(seasons = 2015:2025)
+hist_wnba_team_box <- wehoop::load_wnba_team_box(seasons = 2015:2025)
+
+# Clean data: remove All-Star games' data and only use regular season data
+
+all_star_teams <- c(
+  "EAST",
+  "WEST",
+  "Team Parker",
+  "Team Delle Donne",
+  "Team Wilson",
+  "Team Usa",
+  "Team WNBA",
+  "Team Stewart",
+  "Team USA",
+  "TEAM COLLIER",
+  "TEAM CLARK"
+)
+
+hist_wnba_player_box <- hist_wnba_player_box %>%
+  filter(
+    !team_display_name %in% all_star_teams,
+    season_type == 2
+  )
+
+hist_wnba_team_box <- hist_wnba_team_box %>%
+  filter(
+    !team_display_name %in% all_star_teams,
+    season_type == 2
+  )
+
+# Calculate total points and assists in season
+hist_wnba_pts_assists <- hist_wnba_player_box %>%
+  filter(did_not_play == FALSE) %>%
+  group_by(season, athlete_id, athlete_display_name, team_id) %>%
+  summarize(total_points = sum(points),
+            total_assists = sum(assists)) %>%
+  arrange(desc(total_points)) 
+
+
+hist_wnba_team_pts_assists <- hist_wnba_team_box %>%
+  group_by(season, team_id, team_display_name) %>%
+  summarize(
+    total_assists = sum(assists),
+    total_points = sum(team_score)
+  ) %>%
+  arrange(desc(total_points))
+
+
+# Join historical team and player data together
+hist_player_and_team <- merge(x = hist_wnba_pts_assists,
+                              y = hist_wnba_team_pts_assists,
+                              by.x = c("season", "team_id"),
+                              by.y = c("season","team_id"))
+
+# Calculate share of team points and assists
+hist_player_and_team <- hist_player_and_team %>%
+  rename(
+    team_assists = total_assists.y,
+    team_points = total_points.y
+  ) %>%
+  mutate(
+    assist_share = total_assists.x/team_assists,
+    points_share = total_points.x/team_points,
+    assist_points_share = assist_share + points_share
+  )
+
+```
+
+### NBA Data
+```{r}
+#| output: false
+
+# Load NBA data for comparison
+hist_nba_player_box <- load_nba_player_box(seasons = c(2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025))
+hist_nba_team_box <- load_nba_team_box(seasons = c(2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025))
+
+# Clean data: remove All-Star games' data and only use regular season data
+
+nba_all_star_teams <- c(
+  "Eastern Conf All-Stars",
+  "Western Conf All-Stars",
+  "Team LeBron",
+  "Team Stephen",
+  "World",
+  "USA",
+  "Team Giannis",
+  "Leb",
+  "Usa",
+  "Team Durant",
+  "Team Chuck",
+  "Team Candace",
+  "Team Shaq",
+  "Team Kenny"
+)
+
+
+hist_nba_player_box <- hist_nba_player_box %>%
+  filter(
+    !team_display_name %in% nba_all_star_teams,
+    season_type == 2
+  )
+
+hist_nba_team_box <- hist_nba_team_box %>%
+  filter(
+    !team_display_name %in% nba_all_star_teams,
+    season_type == 2
+  )
+
+
+# Calculate total points and assists in season
+hist_nba_pts_assists <- hist_nba_player_box %>%
+  filter(did_not_play == FALSE) %>%
+  group_by(season, athlete_id, athlete_display_name, team_id) %>%
+  summarize(total_points = sum(points),
+            total_assists = sum(assists)) %>%
+  arrange(desc(total_points)) 
+
+
+hist_nba_team_pts_assists <- hist_nba_team_box %>%
+  group_by(season, team_id, team_display_name) %>%
+  summarize(
+    total_assists = sum(assists),
+    total_points = sum(team_score)
+  ) %>%
+  arrange(desc(total_points))
+
+########
+# Clean data: pull in 2018 totals (incorrect from other data source)
+## Function wrapper for one team
+get_team_stats <- function(team_id) {
+  espn_nba_team_stats(
+    team_id = team_id,
+    year = 2018,
+    season_type = "regular",
+    total = FALSE
+  )
+}
+
+## Vector of team ids (1 to 30)
+team_ids <- 1:30
+
+## Run through all and row-bind
+team_stats_2018 <- map_dfr(team_ids, get_team_stats, .id = "team_id")
+
+## pull out only stats needed
+espn_stats_2018 <- team_stats_2018 %>%
+  mutate(season = "2018") %>%
+  select(season, team_id, team_display_name, offensive_assists, offensive_points)
+
+### make columns the same type and name
+espn_stats_2018[c("season", "team_id", "offensive_assists", "offensive_points")] <- lapply(espn_stats_2018[c("season", "team_id", "offensive_assists", "offensive_points")], as.integer)
+
+espn_stats_2018 <- espn_stats_2018 %>%
+  rename(
+    total_points = offensive_points,
+    total_assists = offensive_assists
+  )
+
+## row bind 2018 team espn stats with bref stats
+hist_nba_team_pts_assists <- rbind(hist_nba_team_pts_assists, espn_stats_2018)
+
+############
+
+# Join team and player data
+hist_nba_player_and_team <- merge(x = hist_nba_pts_assists,
+                                  y = hist_nba_team_pts_assists,
+                                  by.x = c("season", "team_id"),
+                                  by.y = c("season","team_id"))
+
+```
+
+### Combine leagues data and calculate assist and point shares
+```{r}
+#| output: false
+
+# Calculate nba share of team points and assists
+hist_nba_player_and_team <- hist_nba_player_and_team %>%
+  rename(
+    team_assists = total_assists.y,
+    team_points = total_points.y
+  ) %>%
+  mutate(
+    assist_share = total_assists.x/team_assists,
+    points_share = total_points.x/team_points,
+    assist_points_share = assist_share + points_share
+  )
+
+# Add "League" column
+hist_player_and_team <- hist_player_and_team %>%
+  mutate(
+    League = "WNBA"
+  )
+
+hist_nba_player_and_team <- hist_nba_player_and_team %>%
+  mutate(
+    League = "NBA"
+  )
+
+# Union WNBA and NBA data together
+nba_wnba_combined <- rbind(hist_player_and_team, hist_nba_player_and_team)
+```
+
+```{r}
+#| output: false
+#| echo: false
+
+# define r data as ojs variable
+ojs_define(data = nba_wnba_combined)
+
+```
+
+
+
+```{ojs}
+//| output: false
+//| echo: false
+
+defaults = ({
+  // fonts
+    fontSize: "14px",
+    fontFamily: "Calibri",
+    fontColor: "#333",
+  // margins around plot
+    marginTop: 15,
+    marginBottomRegular: 60,
+    marginBottomLarge: 100,
+  // labels
+    labelOffsetRegular: 40,
+    labelOffsetLarge: 85,
+  // title and subtitle
+    titleMarginBottom: 5,
+    titleFontSize: "24px",
+    titleFontWeight: "bold",
+    titleFontColor: "#333",
+    titleMarginBottom: 0,
+    subTitleMarginBottom: 15,
+    subtTitleMarginTop: 0,
+    subTitleFontSize: "18px",
+    subTitleFontColor: "#333",
+  // x axis
+    strokeOpacity: 0.25
+});
+
+```
