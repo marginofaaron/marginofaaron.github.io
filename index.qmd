@@ -22,11 +22,11 @@ about:
 
 ---
 
-Hi, I’m Aaron.
+Hi! 
 
-I am a data analyst and visualization developer based in Indianapolis, IN with a background in the [R Statistical Programming Language](https://www.r-project.org/). This site is where I post my various data projects and document my experiences with code.
+I’m Aaron, a data analyst and business intelligence team leader based in Indianapolis with a background in the [R Statistical Programming Language](https://www.r-project.org/). This site is where I post about various data projects and document my experiences with writing code.
 
-My areas of subject-matter expertise include U.S. Census data and population statistics. I am also an avid sports fan and DIY hobbyist.
+I am passionate about empowering data teams to maximize their potential through skill-building, knowledge sharing, and process improvement. My areas of subject-matter expertise include U.S. Census data and population statistics.  In my free time, I am also an avid sports fan and DIY carpentry hobbyist.
 
 Send me an email if you want to [collaborate](mailto:aaroneolson@pm.me) or subscribe to receive updates on [my email list](https://marginofaaron.substack.com/).
 
@@ -42,6 +42,7 @@ Send me an email if you want to [collaborate](mailto:aaroneolson@pm.me) or subsc
 
 -   Data Analytics \@ Make-A-Wish Foundation
 -   Research & Analysis \@ Indiana University Indianapolis - The Polis Center
+-   Customer Success \@ Bloomerang CRM
 
 :::
 
