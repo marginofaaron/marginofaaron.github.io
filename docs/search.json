@@ -123,7 +123,7 @@
     "href": "blogposts.html",
     "title": "Blog",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nRe-creating the NYT Inflation Chart\n\n\n\nObservable\n\nData Visualization\n\n\n\nAn exercise using the Observable Plot JavaScript library\n\n\n\nAaron Olson\n\n\nNov 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nUpdate: Clark’s 2024 season still stands out\n\n\n\nR\n\nsports\n\nObservable\n\n\n\nRe-visiting her rookie campaign’s offensive production\n\n\n\nAaron Olson\n\n\nSep 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnnexation Station\n\n\n\nR\n\ncensus\n\n\n\nLookout for boundary changes when population totals jump\n\n\n\nAaron Olson\n\n\nDec 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy personal tidycensus guide\n\n\n\nR\n\ncensus\n\n\n\nAnalyze Census data ten times faster\n\n\n\nAaron Olson\n\n\nNov 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaitlin Clark’s Historic 2024\n\n\n\nR\n\nsports\n\n\n\nComparing her rookie year to the last five WNBA and NBA seasons\n\n\n\nAaron Olson\n\n\nSep 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeak Population Years for Every County\n\n\n\nR\n\ncensus\n\n\n\nAnalyzing 100 years of population data\n\n\n\nAaron Olson\n\n\nAug 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nHello, World\n\n\n\nQuarto\n\nR\n\n\n\nWelcome to my blog\n\n\n\nAaron Olson\n\n\nAug 1, 2024\n\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Author\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBack to basics in 2026\n\n\n\nLearning\n\n\n\nLearning to code in the age of AI\n\n\n\nAaron Olson\n\n\nJan 26, 2026\n\n\n\n\n\n\n\n\n\n\n\nRe-creating the NYT Inflation Chart\n\n\n\nObservable\n\nData Visualization\n\n\n\nAn exercise using the Observable Plot JavaScript library\n\n\n\nAaron Olson\n\n\nNov 18, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nUpdate: Clark’s 2024 season still stands out\n\n\n\nR\n\nsports\n\nObservable\n\n\n\nRe-visiting her rookie campaign’s offensive production\n\n\n\nAaron Olson\n\n\nSep 24, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnnexation Station\n\n\n\nR\n\ncensus\n\n\n\nLookout for boundary changes when population totals jump\n\n\n\nAaron Olson\n\n\nDec 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy personal tidycensus guide\n\n\n\nR\n\ncensus\n\n\n\nAnalyze Census data ten times faster\n\n\n\nAaron Olson\n\n\nNov 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaitlin Clark’s Historic 2024\n\n\n\nR\n\nsports\n\n\n\nComparing her rookie year to the last five WNBA and NBA seasons\n\n\n\nAaron Olson\n\n\nSep 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nPeak Population Years for Every County\n\n\n\nR\n\ncensus\n\n\n\nAnalyzing 100 years of population data\n\n\n\nAaron Olson\n\n\nAug 26, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nHello, World\n\n\n\nQuarto\n\nR\n\n\n\nWelcome to my blog\n\n\n\nAaron Olson\n\n\nAug 1, 2024\n\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "posts/2024-08-01-hello-world/index.html",
@@ -334,5 +334,33 @@
     "title": "Re-creating the NYT Inflation Chart",
     "section": "Conclusion",
     "text": "Conclusion\nIn short, Observable rocks :)"
+  },
+  {
+    "objectID": "posts/2026-01-26-back-to-basics/index.html",
+    "href": "posts/2026-01-26-back-to-basics/index.html",
+    "title": "Back to basics in 2026",
+    "section": "",
+    "text": "Data science professionals have always been in a challenging position when it comes to programming knowledge. Some knowledge is, of course, required to accomplish tasks like querying data from a database, cleaning and re-coding datasets, and building statistical models. Even more is required for things like visualization or publishing findings to the web with interactive features that have come to be expected.\nHowever, people (like myself) in this field generally do not have a formal computer science or programming background. We typically learn skills on an ad hoc basis, piecing things together with the most minimal implementation required to get the job done. The data and the findings almost always take precedence over the programming.\nFor some in this field, AI has been a god-send. It fills in programming knowledge gaps and allows us to produce things that were never possible before. At times, it seems to be a cure-all for things like tedious data cleaning processes or producing more professional-looking data visualizations.\nProblem solved. Right?"
+  },
+  {
+    "objectID": "posts/2026-01-26-back-to-basics/index.html#front-end",
+    "href": "posts/2026-01-26-back-to-basics/index.html#front-end",
+    "title": "Back to basics in 2026",
+    "section": "Front End",
+    "text": "Front End\nA huge blind spot in data science are basic front end web design skills that prove incredibly useful when it comes time to present your findings.\n\nHTML\n\nIt’s the basis of every web-based. In my experience, just knowing a little HTML goes a long way in being able to quickly solve website rendering problems.\nProjects: - Almost Every HTML5 Element (completed 1/25/26)\n\nCSS\n\nJust being able to quickly center an iframe-embedded dashboard on a website has made me look like a wizard before to someone who doesn’t know what CSS stands for. I’d really like to level up here.\nProjects:\n\nTBD\n\n\nJavaScript\n\nMy team at work uses a JavaScript-based charting library (Observable) alongside an R-based publishing platform (Quarto) to generate interactive visualizations and dashboards. Just knowing the basics of the language (beyond Observable) would help immensely in debugging or coming up with solutions to common problems.\nProjects:\n\nTBD"
+  },
+  {
+    "objectID": "posts/2026-01-26-back-to-basics/index.html#database-management",
+    "href": "posts/2026-01-26-back-to-basics/index.html#database-management",
+    "title": "Back to basics in 2026",
+    "section": "Database management",
+    "text": "Database management\n\nSQL\n\nWhile I use SQL every day to pull and re-shaping data, I have never spent the time to formally learn the fundamentals. It’s been an exercise in the “just get it done” mentality and my learning has been piecemeal. Learning that things like the SQL order of operations are not immediately intuitive from just writing a query made me realize I need to know more.\nProjects:\n\nTBD"
+  },
+  {
+    "objectID": "posts/2026-01-26-back-to-basics/index.html#statistical-languages",
+    "href": "posts/2026-01-26-back-to-basics/index.html#statistical-languages",
+    "title": "Back to basics in 2026",
+    "section": "Statistical Languages",
+    "text": "Statistical Languages\n\nR\n\nWhile R is the language I know best, I learned it almost exclusively on the back of the tidyverse package. Because of that, Base R’s syntax has always seemed strange to me. Now that I a working with team members who prefer it to tidyverse, I’ve decided I need to just buckle down and learn it.\nProjects:\n\nTBD\n\n\nPython\n\nThe challenge with learning Python when you already know R is that R can do basically everything you need as a data science professional. Sure, Python can do more but you hardly ever need to do the more part.\nSince LLMs seem to prefer Python in language-agnostic applications, I have encountered numerous situations where knowing the fundamentals would have been helpful. I am also curious if Python can do any of my common R tasks more effeciently.\nProjects:\n\nTBD"
   }
 ]
