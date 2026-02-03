@@ -75,11 +75,12 @@ A huge blind spot in data science are basic front end web design skills that pro
 It's the basis of every web-based. In my experience, just knowing a little HTML goes a long way in being able to quickly solve website rendering problems.
 
 Projects:
+
 - [Almost Every HTML5 Element](https://aaroneolson.me/every-html5-element/) (completed 1/25/26)
 
 2) **CSS**
 
-Just being able to quickly center an iframe-embedded dashboard on a website has made me look like a wizard before to someone who doesn't know what CSS stands for. I'd really like to level up here.
+Just being able to quickly center an iframe-embedded dashboard on a website has made me look like a wizard before to someone who doesn't know what CSS stands for. That being said, I'd really like to level up here and go beyond the basics.
 
 Projects:
 
@@ -87,7 +88,7 @@ Projects:
 
 3) **JavaScript**
 
-My team at work uses a JavaScript-based charting library (Observable) alongside an R-based publishing platform (Quarto) to generate interactive visualizations and dashboards. Just knowing the basics of the language (beyond Observable) would help immensely in debugging or coming up with solutions to common problems.
+My team at work uses a JavaScript-based charting library (Observable) alongside an R-based publishing platform (Quarto) to generate interactive visualizations and dashboards. Just knowing the basics of the language (beyond Observable) would help immensely in debugging or quickly coming up with solutions to common problems.
 
 Projects:
 
