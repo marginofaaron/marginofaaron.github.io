@@ -170,9 +170,24 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#an-alternative-path" id="toc-an-alternative-path" class="nav-link" data-scroll-target="#an-alternative-path">An alternative path</a></li>
   <li><a href="#my-2026-learning-list" id="toc-my-2026-learning-list" class="nav-link" data-scroll-target="#my-2026-learning-list">My 2026 learning list</a>
   <ul class="collapse">
-  <li><a href="#front-end" id="toc-front-end" class="nav-link" data-scroll-target="#front-end">Front End</a></li>
-  <li><a href="#database-management" id="toc-database-management" class="nav-link" data-scroll-target="#database-management">Database management</a></li>
-  <li><a href="#statistical-languages" id="toc-statistical-languages" class="nav-link" data-scroll-target="#statistical-languages">Statistical Languages</a></li>
+  <li><a href="#front-end" id="toc-front-end" class="nav-link" data-scroll-target="#front-end">Front End</a>
+  <ul class="collapse">
+  <li><a href="#html" id="toc-html" class="nav-link" data-scroll-target="#html">1. HTML</a></li>
+  <li><a href="#css" id="toc-css" class="nav-link" data-scroll-target="#css">2. CSS</a></li>
+  <li><a href="#javascript" id="toc-javascript" class="nav-link" data-scroll-target="#javascript">3. JavaScript</a></li>
+  </ul></li>
+  <li><a href="#database-management" id="toc-database-management" class="nav-link" data-scroll-target="#database-management">Database Management</a>
+  <ul class="collapse">
+  <li><a href="#sql" id="toc-sql" class="nav-link" data-scroll-target="#sql">SQL</a></li>
+  </ul></li>
+  <li><a href="#statistical-languages" id="toc-statistical-languages" class="nav-link" data-scroll-target="#statistical-languages">Statistical Languages</a>
+  <ul class="collapse">
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
+  </ul></li>
+  <li><a href="#general-programming" id="toc-general-programming" class="nav-link" data-scroll-target="#general-programming">General Programming</a>
+  <ul class="collapse">
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
@@ -187,101 +202,120 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="a-solution-arrives-for-a-long-standing-challenge" class="level1">
 <h1>A solution arrives for a long-standing challenge</h1>
-<p>Data science professionals have always been in a challenging position when it comes to programming knowledge. Some knowledge is, of course, required to accomplish tasks like querying data from a database, cleaning and re-coding datasets, and building statistical models. Even more is required for things like visualization or publishing findings to the web with interactive features that have come to be expected.</p>
-<p>However, people (like myself) in this field generally do not have a formal computer science or programming background. We typically learn skills on an ad hoc basis, piecing things together with the most minimal implementation required to get the job done. The data and the findings almost always take precedence over the programming.</p>
-<p>For some in this field, AI has been a god-send. It fills in programming knowledge gaps and allows us to produce things that were never possible before. At times, it seems to be a cure-all for things like tedious data cleaning processes or producing more professional-looking data visualizations.</p>
-<p>Problem solved. Right?</p>
+<p>Data science has always required a delicate balance when it comes to code. We need enough programming skill to query databases, clean data, and build models — but the programming was always secondary to the findings.</p>
+<p>Many of us (myself included) don’t have formal computer science training. We’ve picked things up as needed, prioritizing insights over engineering.</p>
+<p>For a while, AI felt like the perfect solution. It filled knowledge gaps, sped up tedious tasks, and helped produce more polished outputs.</p>
+<p>Problem solved.</p>
+<p>Right?</p>
 </section>
 <section id="heres-the-catch" class="level1">
 <h1>Here’s the catch</h1>
-<p>This solution creates another core problem. When you ask an LLM to do something for you with little knowledge of what even the building-blocks of the output mean, you have a few options:</p>
+<p>This solution creates a new problem.</p>
+<p>When you ask an LLM to build something — and you don’t fully understand its building blocks — you have three options:</p>
 <ol type="1">
-<li>Take it at face value, plug it into your code, and see if it gives you what you wanted</li>
-<li>Spend time learning about each piece of the proposed solution and test things before using it in your code</li>
-<li>Some combination of those two</li>
+<li>Paste it in and see if it works</li>
+<li>Study each piece before using it</li>
+<li>Do some combination of both</li>
 </ol>
-<p>As someone who both A) generally likes to know how things work and B) is paranoid about faulty code producing an inaccurate result, I spend a lot of time with Option #2.</p>
-<p>Option #2 has its positives. I think it facilitates more actual learning than just brute-forcing your way through prompts to get what you want. My hope with this approach is that it makes the next task faster because I won’t have to ask as many questions.</p>
-<p>But it can be mentally and emotionally draining. This quote from a <a href="https://afterburnout.co/p/ai-promised-to-make-us-more-efficient?r=2l07tp&amp;utm_medium=ios&amp;shareImageVariant=overlay&amp;triedRedirect=true">Kelly Vaughn Substack piece</a> really resonated with me and matched my experience:</p>
+<p>I tend towards Option #2. Partly because I like knowing how things work, and partly because I worry about subtle errors producing inaccurate results.</p>
+<p>There’s real value in that approach. It forces learning instead of brute-forcing prompts until something sticks. Ideally, it makes the next task easier because fewer questions are needed.</p>
+<p>But it’s also exhausting.</p>
+<p>This quote from a <a href="https://afterburnout.co/p/ai-promised-to-make-us-more-efficient?r=2l07tp&amp;utm_medium=ios&amp;shareImageVariant=overlay&amp;triedRedirect=true">Kelly Vaughn Substack piece</a> captures the feeling well:</p>
 <p><em>If an AI tool saves you 30 minutes but leaves you mentally drained and second-guessing everything, that’s not productivity—that’s cognitive debt. And if you’re just filling those saved 30 minutes with another 30 minutes of less valuable work, you’re going to eventually resent your work.</em></p>
-<p>I’ve heard a lot about how people who used to write code have now “outsourced” almost all of that to an LLM. Now they simply “manage” these machines as if they are managing junior team members.</p>
-<p>I do think that’s possible if you are an expert in the languages that your LLMs are producing, but what if you aren’t?</p>
+<p>I’ve heard people say they’ve “outsourced” most of their coding to an LLM, managing it like a junior developer.</p>
+<p>That might work — if you’re already fluent in the language it’s generating.</p>
+<p>But what if you aren’t?</p>
 </section>
 <section id="an-alternative-path" class="level1">
 <h1>An alternative path</h1>
-<p>In my experience, the absolute best use case for LLMs in programming is to ask the tool to do something that you already know how to do but it would simply take a lot of tedious effort to accomplish. I think this is because you are able to quickly verify the output and get the satisfaction of realizing how long it would have taken you to do it manually.</p>
-<p>But asking it to do something that you don’t already know how to do is an entirely different experience. It can be overwhelming and somewhat anxiety-inducing to review every little piece of code filled with keywords, functions, and design patterns that you have no clue why they are being used.</p>
-<p>So, I’ve decided that in order to increase my ability to use AI effectively (because I do believe it’s here to stay) I’ve committed to deeply learning the fundamentals of the languages that I typically ask an LLM to use in solving problems for me. In order to produce a well-engineered prompt for a model, you need to know the proper terminology. In short, if you don’t even know what you are asking, how can you be confident in the result?</p>
+<p>I’ve noticed something in my own workflow.</p>
+<p>The best use of LLMs is asking them to do something I already know how to do — just faster. When I understand the task, I can verify the output quickly. I know what “correct” looks like, and I can clearly see the time savings.</p>
+<p>But when I ask it to do something unfamiliar, the experience changes. Reviewing code packed with unknown functions, patterns, and design choices can feel overwhelming — sometimes even anxiety-inducing.</p>
+<p>So I’ve decided to shift my approach.</p>
+<p>If AI is here to stay — and I believe it is — I want to strengthen the fundamentals in the languages I use most. Not to replace LLMs, but to use them better.</p>
+<p>Strong prompts require clear terminology. Clear evaluation requires real understanding. If you don’t fully know what you’re asking for, how can you confidently judge the result?</p>
 </section>
 <section id="my-2026-learning-list" class="level1">
 <h1>My 2026 learning list</h1>
-<p>Below are the languages and techniques I have committed to learning in 2026. These are the things I find myself constantly wishing I was an expert in based on the work I do daily. I will use a project-based learning approach and will update this post throughout the year with links to my output for each.</p>
-<p>While I don’t think it’s realistic to become an expert in all of them, I do think I can master the fundamentals and then let an LLM augment my skills to produce expert-level work.</p>
-<p>That’s the goal at least; time will tell.</p>
+<p>Here are the areas I’m committing to in 2026 — the skills I repeatedly wish I understood at a deeper level in my daily work.</p>
+<p>I’ll learn through projects and update this post with what I build.</p>
+<p>I don’t expect mastery across the board. But I do want solid fundamentals and then let AI tools amplify them.</p>
+<p>That’s the plan.</p>
 <section id="front-end" class="level2">
 <h2 class="anchored" data-anchor-id="front-end">Front End</h2>
-<p>A huge blind spot in data science are basic front end web design skills that prove incredibly useful when it comes time to present your findings.</p>
-<ol type="1">
-<li><strong>HTML</strong></li>
-</ol>
-<p>It’s the basis of every web-based. In my experience, just knowing a little HTML goes a long way in being able to quickly solve website rendering problems.</p>
-<p>Projects:</p>
+<p>Front-end development is a blind spot for many data scientists, yet it’s essential when presenting findings online in an engaging way.</p>
+<section id="html" class="level3">
+<h3 class="anchored" data-anchor-id="html">1. HTML</h3>
+<p>The foundation of the web. Even basic knowledge helps troubleshoot rendering issues and customize framework components.</p>
+<p><strong>Projects:</strong></p>
 <ul>
 <li><a href="https://aaroneolson.me/every-html5-element/">Almost Every HTML5 Element</a> (completed 1/25/26)</li>
 </ul>
-<ol start="2" type="1">
-<li><strong>CSS</strong></li>
-</ol>
-<p>Just being able to quickly center an iframe-embedded dashboard on a website has made me look like a wizard before to someone who doesn’t know what CSS stands for. That being said, I’d really like to level up here and go beyond the basics.</p>
-<p>Projects:</p>
+</section>
+<section id="css" class="level3">
+<h3 class="anchored" data-anchor-id="css">2. CSS</h3>
+<p>If you want control over how something looks on a webpage, you need CSS. This year, I’m going beyond <a href="https://medium.com/@akonain138/the-sarcastic-struggles-of-centering-a-div-a-programmers-journey-2839dafe416c">learning how to center a div</a>.</p>
+<p><strong>Projects:</strong></p>
 <ul>
-<li>TBD</li>
+<li><a href="https://aaroneolson.me/css-gallery/">CSS Gallery</a> (completed 2/24/26)</li>
 </ul>
-<ol start="3" type="1">
-<li><strong>JavaScript</strong></li>
-</ol>
-<p>My team at work uses a JavaScript-based charting library (Observable) alongside an R-based publishing platform (Quarto) to generate interactive visualizations and dashboards. Just knowing the basics of the language (beyond Observable) would help immensely in debugging or quickly coming up with solutions to common problems.</p>
-<p>Projects:</p>
+</section>
+<section id="javascript" class="level3">
+<h3 class="anchored" data-anchor-id="javascript">3. JavaScript</h3>
+<p>I recently started building visualizations with the <a href="https://observablehq.com">Observable Plot</a> JavaScript charting library — and I love it.</p>
+<p>The problem? I skipped the JavaScript fundamentals.</p>
+<p>This is the year I fix that.</p>
+<p><strong>Projects:</strong></p>
 <ul>
 <li>TBD</li>
 </ul>
 </section>
+</section>
 <section id="database-management" class="level2">
-<h2 class="anchored" data-anchor-id="database-management">Database management</h2>
-<ol type="1">
-<li><strong>SQL</strong></li>
-</ol>
-<p>While I use SQL every day to pull and re-shaping data, I have never spent the time to formally learn the fundamentals. It’s been an exercise in the “just get it done” mentality and my learning has been piecemeal. Learning that things like the <a href="https://www.geeksforgeeks.org/sql/order-of-execution-of-sql-queries/">SQL order of operations</a> are not immediately intuitive from just writing a query made me realize I need to know more.</p>
-<p>Projects:</p>
+<h2 class="anchored" data-anchor-id="database-management">Database Management</h2>
+<section id="sql" class="level3">
+<h3 class="anchored" data-anchor-id="sql">SQL</h3>
+<p>SQL is a core skill that I use daily. Now I want to move beyond basic <code>SELECT</code> statements into stored procedures, functions, and deeper database concepts.</p>
+<p><strong>Projects:</strong></p>
 <ul>
 <li>TBD</li>
 </ul>
+</section>
 </section>
 <section id="statistical-languages" class="level2">
 <h2 class="anchored" data-anchor-id="statistical-languages">Statistical Languages</h2>
-<ol type="1">
-<li><strong>R</strong></li>
-</ol>
-<p>While R is the language I know best, I learned it almost exclusively on the back of the <code>tidyverse</code> package. Because of that, Base R’s syntax has always seemed strange to me. Now that I a working with team members who prefer it to <code>tidyverse</code>, I’ve decided I need to just buckle down and learn it.</p>
-<p>Projects:</p>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
+<p>R is the language I know best, but I learned it almost entirely through the <code>tidyverse</code>. Because of that, base R syntax still feels unfamiliar.</p>
+<p>When collaborating with colleagues who prefer base R, I spend too much time asking a chatbot to translate code.</p>
+<p>This is the year I fix that.</p>
+<p><strong>Projects:</strong></p>
 <ul>
 <li>TBD</li>
 </ul>
-<ol start="2" type="1">
-<li><strong>Python</strong></li>
-</ol>
-<p>The challenge with learning Python when you already know R is that R can do basically everything you need as a data science professional. Sure, Python can do <em>more</em> but you hardly ever need to do the <em>more</em> part.</p>
-<p>Since LLMs <a href="https://arxiv.org/html/2503.17181v1">seem to prefer Python</a> in language-agnostic applications, I have encountered numerous situations where knowing the fundamentals would have been helpful. I am also curious if Python can do any of my common R tasks more effeciently.</p>
-<p>Projects:</p>
+</section>
+</section>
+<section id="general-programming" class="level2">
+<h2 class="anchored" data-anchor-id="general-programming">General Programming</h2>
+<section id="python" class="level3">
+<h3 class="anchored" data-anchor-id="python">Python</h3>
+<p>Learning Python when you already know R is tricky. R already handles most of what I need.</p>
+<p>Yes, Python can do <em>more</em> — but I don’t always need the “more.”</p>
+<p>Still, <a href="https://arxiv.org/html/2503.17181v1">LLMs often default to Python</a>, and I’ve encountered enough situations where stronger fundamentals would have helped. I’m also curious whether Python can perform some of my common R workflows more efficiently.</p>
+<p>It’s time to find out.</p>
+<p><strong>Projects:</strong></p>
 <ul>
 <li>TBD</li>
 </ul>
+</section>
 </section>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>This is a starting point and I will add more as the year goes on. I am curious to see how this approach works alongside continuing to use LLMs in my daily work.</p>
-<p>In my view, it’s not an either-or, it’s a both-and.</p>
+<p>This is a starting point. I’ll add more as the year unfolds.</p>
+<p>I’m curious to see how deepening fundamentals — while continuing to use LLMs — plays out in my data science practice.</p>
+<p>In my view, it’s not either-or.</p>
+<p>It’s both-and.</p>
 
 
 </section>

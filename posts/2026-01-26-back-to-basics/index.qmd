@@ -17,119 +17,148 @@ format:
 #   warning: false
 #   message: false
 lightbox: true
-ojs: true
 ---
 
 # A solution arrives for a long-standing challenge
 
-Data science professionals have always been in a challenging position when it comes to programming knowledge. Some knowledge is, of course, required to accomplish tasks like querying data from a database, cleaning and re-coding datasets, and building statistical models. Even more is required for things like visualization or publishing findings to the web with interactive features that have come to be expected.
+Data science has always required a delicate balance when it comes to code. We need enough programming skill to query databases, clean data, and build models — but the programming was always secondary to the findings.
 
-However, people (like myself) in this field generally do not have a formal computer science or programming background. We typically learn skills on an ad hoc basis, piecing things together with the most minimal implementation required to get the job done. The data and the findings almost always take precedence over the programming.
+Many of us (myself included) don’t have formal computer science training. We’ve picked things up as needed, prioritizing insights over engineering.
 
-For some in this field, AI has been a god-send. It fills in programming knowledge gaps and allows us to produce things that were never possible before. At times, it seems to be a cure-all for things like tedious data cleaning processes or producing more professional-looking data visualizations.
+For a while, AI felt like the perfect solution. It filled knowledge gaps, sped up tedious tasks, and helped produce more polished outputs.
 
-Problem solved. Right?
+Problem solved.
 
-# Here's the catch
+Right?
 
-This solution creates another core problem. When you ask an LLM to do something for you with little knowledge of what even the building-blocks of the output mean, you have a few options:
+# Here’s the catch
 
-1) Take it at face value, plug it into your code, and see if it gives you what you wanted
-2) Spend time learning about each piece of the proposed solution and test things before using it in your code
-3) Some combination of those two
+This solution creates a new problem.
 
-As someone who both A) generally likes to know how things work and B) is paranoid about faulty code producing an inaccurate result, I spend a lot of time with Option #2.
+When you ask an LLM to build something — and you don’t fully understand its building blocks — you have three options:
 
-Option #2 has its positives. I think it facilitates more actual learning than just brute-forcing your way through prompts to get what you want. My hope with this approach is that it makes the next task faster because I won't have to ask as many questions.
+1. Paste it in and see if it works
+2. Study each piece before using it
+3. Do some combination of both
 
-But it can be mentally and emotionally draining. This quote from a [Kelly Vaughn Substack piece](https://afterburnout.co/p/ai-promised-to-make-us-more-efficient?r=2l07tp&utm_medium=ios&shareImageVariant=overlay&triedRedirect=true) really resonated with me and matched my experience:
+I tend towards Option #2. Partly because I like knowing how things work, and partly because I worry about subtle errors producing inaccurate results.
 
-*If an AI tool saves you 30 minutes but leaves you mentally drained and second-guessing everything, that’s not productivity—that’s cognitive debt. And if you’re just filling those saved 30 minutes with another 30 minutes of less valuable work, you’re going to eventually resent your work.*
+There’s real value in that approach. It forces learning instead of brute-forcing prompts until something sticks. Ideally, it makes the next task easier because fewer questions are needed.
 
-I've heard a lot about how people who used to write code have now "outsourced" almost all of that to an LLM. Now they simply "manage" these machines as if they are managing junior team members. 
+But it’s also exhausting.
 
-I do think that's possible if you are an expert in the languages that your LLMs are producing, but what if you aren't?
+This quote from a [Kelly Vaughn Substack piece](https://afterburnout.co/p/ai-promised-to-make-us-more-efficient?r=2l07tp&utm_medium=ios&shareImageVariant=overlay&triedRedirect=true) captures the feeling well:
+
+_If an AI tool saves you 30 minutes but leaves you mentally drained and second-guessing everything, that’s not productivity—that’s cognitive debt. And if you’re just filling those saved 30 minutes with another 30 minutes of less valuable work, you’re going to eventually resent your work._
+
+I’ve heard people say they’ve “outsourced” most of their coding to an LLM, managing it like a junior developer.
+
+That might work — if you’re already fluent in the language it’s generating.
+
+But what if you aren’t?
 
 # An alternative path
 
-In my experience, the absolute best use case for LLMs in programming is to ask the tool to do something that you already know how to do but it would simply take a lot of tedious effort to accomplish. I think this is because you are able to quickly verify the output and get the satisfaction of realizing how long it would have taken you to do it manually.
+I’ve noticed something in my own workflow.
 
-But asking it to do something that you don't already know how to do is an entirely different experience. It can be overwhelming and somewhat anxiety-inducing to review every little piece of code filled with keywords, functions, and design patterns that you have no clue why they are being used.
+The best use of LLMs is asking them to do something I already know how to do — just faster. When I understand the task, I can verify the output quickly. I know what “correct” looks like, and I can clearly see the time savings.
 
-So, I've decided that in order to increase my ability to use AI effectively (because I do believe it's here to stay) I've committed to deeply learning the fundamentals of the languages that I typically ask an LLM to use in solving problems for me. In order to produce a well-engineered prompt for a model, you need to know the proper terminology. In short, if you don't even know what you are asking, how can you be confident in the result?
+But when I ask it to do something unfamiliar, the experience changes. Reviewing code packed with unknown functions, patterns, and design choices can feel overwhelming — sometimes even anxiety-inducing.
+
+So I’ve decided to shift my approach.
+
+If AI is here to stay — and I believe it is — I want to strengthen the fundamentals in the languages I use most. Not to replace LLMs, but to use them better.
+
+Strong prompts require clear terminology. Clear evaluation requires real understanding. If you don’t fully know what you’re asking for, how can you confidently judge the result?
 
 # My 2026 learning list
 
-Below are the languages and techniques I have committed to learning in 2026. These are the things I find myself constantly wishing I was an expert in based on the work I do daily. I will use a project-based learning approach and will update this post throughout the year with links to my output for each.
+Here are the areas I’m committing to in 2026 — the skills I repeatedly wish I understood at a deeper level in my daily work.
 
-While I don't think it's realistic to become an expert in all of them, I do think I can master the fundamentals and then let an LLM augment my skills to produce expert-level work.
+I’ll learn through projects and update this post with what I build.
 
-That's the goal at least; time will tell.
+I don’t expect mastery across the board. But I do want solid fundamentals and then let AI tools amplify them.
+
+That’s the plan.
 
 ## Front End
 
-A huge blind spot in data science are basic front end web design skills that prove incredibly useful when it comes time to present your findings. 
+Front-end development is a blind spot for many data scientists, yet it’s essential when presenting findings online in an engaging way.
 
-1) **HTML**
+### 1. HTML
 
-It's the basis of every web-based. In my experience, just knowing a little HTML goes a long way in being able to quickly solve website rendering problems.
+The foundation of the web. Even basic knowledge helps troubleshoot rendering issues and customize framework components.
 
-Projects:
+**Projects:**
 
 - [Almost Every HTML5 Element](https://aaroneolson.me/every-html5-element/) (completed 1/25/26)
 
-2) **CSS**
+### 2. CSS
 
-Just being able to quickly center an iframe-embedded dashboard on a website has made me look like a wizard before to someone who doesn't know what CSS stands for. That being said, I'd really like to level up here and go beyond the basics.
+If you want control over how something looks on a webpage, you need CSS. This year, I’m going beyond [learning how to center a div](https://medium.com/@akonain138/the-sarcastic-struggles-of-centering-a-div-a-programmers-journey-2839dafe416c).
 
-Projects:
+**Projects:**
+
+- [CSS Gallery](https://aaroneolson.me/css-gallery/) (completed 2/24/26)
+
+### 3. JavaScript
+
+I recently started building visualizations with the [Observable Plot](https://observablehq.com) JavaScript charting library — and I love it.
+
+The problem? I skipped the JavaScript fundamentals.
+
+This is the year I fix that.
+
+**Projects:**
 
 - TBD
 
-3) **JavaScript**
+## Database Management
 
-My team at work uses a JavaScript-based charting library (Observable) alongside an R-based publishing platform (Quarto) to generate interactive visualizations and dashboards. Just knowing the basics of the language (beyond Observable) would help immensely in debugging or quickly coming up with solutions to common problems.
+### SQL
 
-Projects:
+SQL is a core skill that I use daily. Now I want to move beyond basic `SELECT` statements into stored procedures, functions, and deeper database concepts.
 
-- TBD
-
-## Database management
-
-1) **SQL**
-
-While I use SQL every day to pull and re-shaping data, I have never spent the time to formally learn the fundamentals. It's been an exercise in the "just get it done" mentality and my learning has been piecemeal. Learning that things like the [SQL order of operations](https://www.geeksforgeeks.org/sql/order-of-execution-of-sql-queries/) are not immediately intuitive from just writing a query made me realize I need to know more.
-
-Projects:
+**Projects:**
 
 - TBD
 
 ## Statistical Languages
 
-1) **R**
+### R
 
-While R is the language I know best, I learned it almost exclusively on the back of the `tidyverse` package. Because of that, Base R's syntax has always seemed strange to me. Now that I a working with team members who prefer it to `tidyverse`, I've decided I need to just buckle down and learn it.
+R is the language I know best, but I learned it almost entirely through the `tidyverse`. Because of that, base R syntax still feels unfamiliar.
 
-Projects:
+When collaborating with colleagues who prefer base R, I spend too much time asking a chatbot to translate code.
+
+This is the year I fix that.
+
+**Projects:**
 
 - TBD
 
-2) **Python**
+## General Programming
 
-The challenge with learning Python when you already know R is that R can do basically everything you need as a data science professional. Sure, Python can do *more* but you hardly ever need to do the *more* part. 
+### Python
 
-Since LLMs [seem to prefer Python](https://arxiv.org/html/2503.17181v1) in language-agnostic applications, I have encountered numerous situations where knowing the fundamentals would have been helpful. I am also curious if Python can do any of my common R tasks more effeciently.
+Learning Python when you already know R is tricky. R already handles most of what I need.
 
-Projects:
+Yes, Python can do _more_ — but I don’t always need the “more.”
+
+Still, [LLMs often default to Python](https://arxiv.org/html/2503.17181v1), and I’ve encountered enough situations where stronger fundamentals would have helped. I’m also curious whether Python can perform some of my common R workflows more efficiently.
+
+It’s time to find out.
+
+**Projects:**
 
 - TBD
 
 # Conclusion
 
-This is a starting point and I will add more as the year goes on. I am curious to see how this approach works alongside continuing to use LLMs in my daily work. 
+This is a starting point. I’ll add more as the year unfolds.
 
-In my view, it's not an either-or, it's a both-and.
+I’m curious to see how deepening fundamentals — while continuing to use LLMs — plays out in my data science practice.
 
+In my view, it’s not either-or.
 
-
-
+It’s both-and.
