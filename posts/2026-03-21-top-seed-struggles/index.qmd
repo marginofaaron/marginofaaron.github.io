@@ -1,0 +1,326 @@
+---
+title: "Top seed struggles"
+description: "Duke's first round performance doesn't bode well for their title chances"
+author:
+  - name: Aaron Olson
+    url: https://github.com/marginofaaron
+date: 03-21-26
+categories: [sports] 
+# image: assets/helloWorld.png
+draft: false 
+format:
+  html:
+    code-fold: false
+    code-tools: true
+    code-copy: true
+# execute:
+#   warning: false
+#   message: false
+lightbox: true
+---
+# The 2026 Top Seeds
+Each of the four #1 seeds in the 2026 Men's NCAA Tournament advanced to the second round, but they did so in very different ways. Michigan beat Howard by 21, a respectable margin, while Arizona raced past Long Island by a stronger 34. Florida absolutely destroyed Prairie View A&M by 58 points--the largest margin of victory in the first round.
+
+Duke, however, struggled with Siena and eked out a 6 point victory after trailing at halftime by a shocking 11 points.
+
+A win is a win, right? Survive-and-advance, right?
+
+The historical numbers say: not so fast.
+
+# Historical Context
+
+```{r}
+#| echo: false
+#| output: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+
+# import data -------------------------------------------------------------
+
+MTeams <- read_csv("data/MTeams.csv", col_types = cols(TeamID = col_character()))
+
+MNCAATourneySeeds <- read_csv("data/MNCAATourneySeeds.csv", 
+                              col_types = cols(TeamID = col_character()))
+
+
+MNCAATourneyCompactResults <- read_csv("data/MNCAATourneyCompactResults.csv", 
+                                       col_types = cols(WTeamID = col_character(), 
+                                                        LTeamID = col_character()))
+
+# join seeds and team names to game results -------------------------------
+MNCAATourneyCompactResults <- merge(
+  x = MNCAATourneyCompactResults,
+  y = MTeams,
+  by.x = 'WTeamID',
+  by.y = 'TeamID',
+  all.x = TRUE
+) 
+
+MNCAATourneyCompactResults <- MNCAATourneyCompactResults %>%
+  rename(
+    WTeamName = TeamName
+  ) %>%
+  select(
+    -c(11,10)
+  )
+
+MNCAATourneyCompactResults <- merge(
+  x = MNCAATourneyCompactResults,
+  y = MTeams,
+  by.x = 'LTeamID',
+  by.y = 'TeamID',
+  all.x = TRUE
+) 
+
+MNCAATourneyCompactResults <- MNCAATourneyCompactResults %>%
+  rename(
+    LTeamName = TeamName
+  ) %>%
+  select(
+    -c(11,12)
+  )
+
+MNCAATourneyCompactResults <- merge(
+  x = MNCAATourneyCompactResults,
+  y = MNCAATourneySeeds,
+  by.x = c('WTeamID','Season'),
+  by.y = c('TeamID', 'Season'),
+  all.x = TRUE
+) %>%
+  rename(
+    WTeamSeed = Seed
+  )
+
+MNCAATourneyCompactResults <- merge(
+  x = MNCAATourneyCompactResults,
+  y = MNCAATourneySeeds,
+  by.x = c('LTeamID','Season'),
+  by.y = c('TeamID', 'Season'),
+  all.x = TRUE
+) %>%
+  rename(
+    LTeamSeed = Seed
+  )
+
+# convert seeds to numeric
+MNCAATourneyCompactResults$WTeamSeed <- gsub("[^0-9]", "", MNCAATourneyCompactResults$WTeamSeed)
+MNCAATourneyCompactResults$LTeamSeed <- gsub("[^0-9]", "", MNCAATourneyCompactResults$LTeamSeed)
+
+MNCAATourneyCompactResults$WTeamSeed <- as.numeric(MNCAATourneyCompactResults$WTeamSeed)
+MNCAATourneyCompactResults$LTeamSeed <- as.numeric(MNCAATourneyCompactResults$LTeamSeed)
+
+
+# Identify 1 vs 16 seed matchups ------------------------------------------
+MNCAATourneyCompactResults$onesixteen <- abs(MNCAATourneyCompactResults$WTeamSeed - MNCAATourneyCompactResults$LTeamSeed)
+
+MNCAATourneyCompactResults$onesixteen <- ifelse(
+  MNCAATourneyCompactResults$onesixteen == 15,
+  "yes",
+  "no"
+)
+
+# get margin of victory for every 1 seed in first round -------------------
+firstroundgames <- MNCAATourneyCompactResults %>%
+  filter(
+    onesixteen == 'yes'
+  ) 
+
+firstroundgames$margin <- ifelse(
+  firstroundgames$WTeamSeed == 1,
+  firstroundgames$WScore - firstroundgames$LScore,
+  firstroundgames$LScore - firstroundgames$WScore
+)
+
+
+# number 1 seed performance each tourney ----------------------------------
+topseedperformance <- MNCAATourneyCompactResults %>%
+  filter(
+    WTeamSeed == 1
+  ) %>%
+  group_by(Season, WTeamName, WTeamID) %>%
+  summarize(wins = n())
+
+
+# join first round margin to total wins -----------------------------------
+topseedperformance <- merge(
+  x = topseedperformance,
+  y = firstroundgames,
+  by.x = c('Season', 'WTeamID'),
+  by.y = c('Season', 'WTeamID'),
+  all.x = TRUE
+)
+
+# convert wins to tournament performance
+topseedperformance <- topseedperformance %>%
+  mutate(
+    performance = case_when(
+      wins == 1 ~ 'Round of 32',
+      wins == 2 ~ 'Sweet 16',
+      wins == 3 ~ 'Elite 8',
+      wins == 4 ~ 'Final Four',
+      wins == 5 ~ 'Runner-Up',
+      wins == 6 ~ 'Champion',
+      TRUE ~ NA
+    )
+  )
+
+
+```
+
+There have been 164 first round match ups between #1 and #16 seeds since 1985, and the #1 seed has prevailed all but two times. In general, these games are not close. The average margin of victory for a #1 over a #16 during this time-span is 25 points.
+
+In fact, Duke's 6 point win over Siena was just the 8th time that a top seed had won their first round game by 6 points or less. 
+
+<br>
+
+```{r}
+#| echo: FALSE
+#| message: false
+
+
+# prep data for table
+
+table <- topseedperformance %>%
+  select(
+    Season,
+    Team = WTeamName.x,
+    `R64 Winning Margin` = margin
+  ) %>%
+  filter(
+    `R64 Winning Margin` <= 6
+  ) %>%
+  arrange(`R64 Winning Margin`)
+
+library(DT)
+
+datatable(
+  table,
+  options = list(
+    # pageLength = 5,
+    # autoWidth = TRUE,
+    dom = "ltipr"
+  ),
+  rownames = FALSE
+)
+```
+
+<br>
+
+This performance was disappointing for Duke on its own, but what's most concerning for them is the company they now find themselves.
+
+It turns out top-seeded teams that end up cutting down the nets as champions generally do well in their first round games. The smallest first round margin of victory for an #1 seed eventual champion (since 1985) was when the 1994 Arkansas Razorbacks beat North Carolina A&T by 15 points.
+
+<br>
+
+{{< video https://www.youtube.com/watch?v=kSsKWMOBnI0 >}}
+<br>
+Below are the first round winning margins for all #1 seeds who ended up winning the title in our dataset.
+<br>
+<br>
+
+```{r}
+#| echo: FALSE
+#| message: false
+
+# prep data for table
+champ_table <- topseedperformance %>%
+  filter(
+    performance == 'Champion'
+  ) %>%
+  select(
+    Season,
+    Team = WTeamName.x,
+    `R64 Winning Margin` = margin
+  )%>%
+  arrange(`R64 Winning Margin`)
+
+datatable(
+  champ_table,
+  options = list(
+    # pageLength = 5,
+    # autoWidth = TRUE,
+    dom = "ltipr"
+  ),
+  rownames = FALSE
+)
+
+
+```
+
+<br>
+
+If you plot first round margin of victory against total number of wins in that tournament (Champions must win 6 games), there is a positive correlation. A few outliers exist--1998 Kansas won their first round game by an impressive 58 points only to lose to Rhode Island in the second round--but the trend generally holds.
+
+<br>
+
+```{r}
+#| echo: FALSE
+
+# scatterplot -------------------------------------------------------------
+ggplot(topseedperformance, aes(x = wins, y = margin)) +
+  geom_point(
+    color = "steelblue",
+    alpha = 0.7,
+    size  = 2
+  ) +
+  scale_x_continuous(breaks = 0:6) +
+  labs(
+    title = "First-Round Margin of Victory for #1 Seeds",
+    subtitle = "Grouped by eventual tournament game wins",
+    x = "Tournament game wins",
+    y = "First Round Margin of victory",
+    caption = "Champions must win 6 games"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor   = element_blank(),
+    plot.title         = element_text(face = "bold"),
+    plot.subtitle      = element_text(color = "gray30")
+  ) 
+
+```
+
+<br>
+
+Another way to look at this is by calculating the average first-round margin of victory for top seeds grouped by their eventual number of tournament. The same pattern emerges.
+
+<br>
+
+```{r}
+#| echo: false
+
+# calculate average margin of victory by wins -----------------------------
+topseedperformance %>%
+  group_by(wins) %>%
+  summarize(avg_firstroundmargin = mean(margin), .groups = "drop") %>%
+  ggplot(aes(x = wins, y = avg_firstroundmargin)) +
+  geom_col(fill = "steelblue", alpha = 0.8) +          # bar of means [web:62]
+  scale_x_continuous(breaks = 0:6) +
+  labs(
+    title = "Average First-Round Margin of Victory for #1 Seeds",
+    subtitle = "Grouped by eventual tournament game wins",
+    x = "Tournament game wins",
+    y = "Average first-round margin",
+    caption = "Champions must win 6 games"
+  ) +
+  theme_minimal(base_size = 14) +                      # same theme family [web:63][web:65]
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor   = element_blank(),
+    plot.title         = element_text(face = "bold"),
+    plot.subtitle      = element_text(color = "gray30")
+  )
+
+```
+
+<br>
+
+There is little precedent for barely winning the first round and still making a deep run. Only three times has a #1 seed won in the Round of 64 by 10 or less and still made the Final Four.
+
+It doesn't look good for the Blue Devils, but unpredictability is what makes the tournament fun. Who knows? Maybe they will get it together and blow the doors off TCU in the second round today.
+
+Stranger things have happened. Let the Madness continue.
+
