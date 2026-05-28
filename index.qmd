@@ -29,21 +29,6 @@ I’m Aaron, a data analyst and business intelligence team leader based in India
 I am passionate about empowering data teams to maximize their potential through skill-building, knowledge sharing, and process improvement. My areas of subject-matter expertise include U.S. Census data and population statistics.  In my free time, I am also an avid sports fan and DIY carpentry hobbyist.
 
 Send me an email if you want to [collaborate](mailto:aaroneolson@pm.me) or subscribe to receive updates on [my email list](https://marginofaaron.substack.com/).
-
-#### 💼 Professional Experience
-
----
-
-*Currently:*
-
--   Business Intelligence \@ Indiana Commission for Higher Education
-
-*Formerly:*
-
--   Data Analytics \@ Make-A-Wish Foundation
--   Research & Analysis \@ Indiana University Indianapolis - The Polis Center
--   Customer Success \@ Bloomerang CRM
-
 :::
 
 
